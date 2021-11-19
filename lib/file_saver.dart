@@ -172,7 +172,7 @@ class FileSaver {
   Future<String?> _getDirectory() async {
     String? _path = "";
     try {
-      if (Platform.isIOS) {
+      if (Platform.isIOS || Platform.isAndroid) {
         _path = (await path.getApplicationDocumentsDirectory()).path;
       } else if (Platform.isMacOS) {
         _path = (await path.getDownloadsDirectory())?.path;
